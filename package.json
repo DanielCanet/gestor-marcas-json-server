@@ -1,0 +1,20 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.0",
+    "angular-animate": "^1.6.0",
+    "angular-aria": "^1.6.0",
+    "angular-material": "^1.1.1",
+    "jquery": "^3.1.1",
+    "json-server": "^0.9.4",
+    "requirejs": "^2.3.2"
+  }
+}
