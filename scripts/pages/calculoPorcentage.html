@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+	<link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
+    <script data-main="scripts/config" src="node_modules/requirejs/require.js"></script>
+</head>
+
+<body>-->
+
+	<div id="contenedor" ng-controller="appController as ctrl" 
+	style="border: 1px solid rgba(0,0,0,0.12); width: 25rem;">
+
+	<div id="contenedor" style="border: 1px solid rgba(0,0,0,0.12); width: 25rem;">	
+
+		<form name="gestorMarcaForm">
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta>
+			</div>
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<edad-atleta-bind edad="ctrl.model.edad" style="width: 3rem"></edad-atleta-bind> 
+			</div>
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<tipo-prueba change="ctrl.changeTipoPrueba" tipo="ctrl.model.tipoPrueba"></tipo-prueba>
+				<select-prueba prueba="ctrl.model.prueba" lista="ctrl.lista"></select-prueba>
+			</div>
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<marca-atleta marca="ctrl.model.marca"></marca-atleta>
+			</div>
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<label for="porcentage">{{ ctrl.model.porcentage }}%</label></br>
+			</div>	
+			<div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+				<button class="btn btn-primary btn-lg" ng-click="ctrl.getMarca()">
+				Obtener %
+				</button>
+			</div>																	
+		</form>
+
+	</div>
+
+<!--</body>
+</html>-->
+

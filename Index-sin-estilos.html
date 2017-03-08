@@ -10,34 +10,6 @@
 
 <body>
 
-	<div id="contenedor" ng-controller="appController as ctrl" class="md-inline-form">
-
-		<form name="gestorMarcaForm">
-			<div layout-gt-xs="row">
-				<sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta> <hr />
-				<edad-atleta-bind edad="ctrl.model.edad"></edad-atleta-bind> 
-			</div>
-		</form>
-
-	</div>
-
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title></title>
-	<link rel="stylesheet" href="./node_modules/angular-material/angular-material.css"/>
-    <script data-main="scripts/config" src="node_modules/requirejs/require.js"></script>
-</head>
-
-<body>
-
 	<div id="contenedor" ng-controller="appController as ctrl">
 		<h1>{{ctrl.name}}</h1>
 		<div>
@@ -46,6 +18,13 @@
 			<span><strong>scope tipo-prueba:</strong> {{ctrl.model.tipoPrueba}}</span>
 			<span><strong>scope prueba:</strong> {{ctrl.model.prueba}}</span>
 			<span><strong>scope marca:</strong> {{ctrl.model.marca}}</span>
+		</div>
+		<div>
+			<li>
+				<ul ng-repeat = "ganador in ctrl.ganadores">
+						{{ganador.posicion + "- "+ ganador.nombre}}
+				</ul>
+			</li>
 		</div>
 		</br>
 		<sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta>	
