@@ -15,6 +15,10 @@ define([
 	calculoController(app);
 	listaMarcasController(app);	
 
+	app.config(['$locationProvider', function($locationProvider) {
+  		$locationProvider.hashPrefix('');
+	}]);
+
 	app.config(['$routeProvider',
 		function($routeProvider) {
 			$routeProvider.
