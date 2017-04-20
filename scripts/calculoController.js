@@ -4,7 +4,7 @@ define([
     return function(app) {
         function controller($scope, modelService) {
             var vm = this;
-            vm.saludo = "hola mundo";
+
             vm.sexo = "M";
             vm.edad = "25";
 
