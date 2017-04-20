@@ -1,37 +1,37 @@
 requirejs.config({
     baseUrl: 'scripts',
     paths: {
-		'text' : '../node_modules/text/text',
-		'jquery' : '../node_modules/jquery/dist/jquery',
-		'angular' : '../node_modules/angular/angular',
-		'angular-material' : '../node_modules/angular-material/angular-material',
-		'angular-route' : '../node_modules/angular-route/angular-route',
-		'angular-animate' : '../node_modules/angular-animate/angular-animate',
-		'angular-aria' : '../node_modules/angular-aria/angular-aria',
-		'tmp' : '../templates',
+        'text': '../node_modules/text/text',
+        'jquery': '../node_modules/jquery/dist/jquery',
+        'angular': '../node_modules/angular/angular',
+        'angular-material': '../node_modules/angular-material/angular-material',
+        'angular-route': '../node_modules/angular-route/angular-route',
+        'angular-animate': '../node_modules/angular-animate/angular-animate',
+        'angular-aria': '../node_modules/angular-aria/angular-aria',
+        'tmp': '../templates',
 
     },
     shim: {
-		'angular': {
-			deps: ['jquery'],
-			exports: 'angular'
-		},	
-		'angular-material': {
-			deps: ['angular-animate', 'angular-aria'],
-			exports: 'ngMaterial'
-		},		
-		'angular-route': {
-			deps: ['angular']
-		},			
-		'angular-animate': {
-			deps: ['angular'],			
-			exports: 'ngAnimate'
-		},	
-		'angular-aria': {
-			deps: ['angular'],			
-			exports: 'ngAria'
-		}	
-    }	
+        'angular': {
+            deps: ['jquery'],
+            exports: 'angular'
+        },
+        'angular-material': {
+            deps: ['angular-animate', 'angular-aria'],
+            exports: 'ngMaterial'
+        },
+        'angular-route': {
+            deps: ['angular']
+        },
+        'angular-animate': {
+            deps: ['angular'],
+            exports: 'ngAnimate'
+        },
+        'angular-aria': {
+            deps: ['angular'],
+            exports: 'ngAria'
+        }
+    }
 
 });
 
