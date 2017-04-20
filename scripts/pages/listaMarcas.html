@@ -1,16 +1,18 @@
+<div id="listado" style="margin: 0 auto; border: 1px solid rgba(0,0,0,0.12);width: 25rem; height: 29rem" ng-controller="listaMarcasController as ctrl">
 
-        <h3>{{nombre_listado}}</h3>
-		<table class="table">
+        <h3 style="text-align: center">{{ctrl.nombre_listado}}</h3>
+		<table class="table" style="width: 100%; height: 29rem">
 			<thead>
 				<tr>
 					<th>Prueba</th>
 					<th>Mejor marca</th>
 				</tr>
 			</thead>			
-			<tbody>			
-				<tr ng-repeat="marca in ctrl.marcas">
-					<td>{{marca.sex}}</td>
-					<td>{{marca.age}}</td>				
+			<tbody>
+				<tr style="text-align: center" ng-repeat="marca in ctrl.listaMarcasEdadSeleccionada[0].eventos">
+					<td>{{marca.name}}</td>
+					<td>{{marca.mark}}</td>				
 				</tr>		
 			<tbody>
 		</table>
+</div>

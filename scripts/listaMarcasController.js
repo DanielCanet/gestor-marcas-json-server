@@ -7,16 +7,18 @@ define([
 			
 			vm=this;
 
+			vm.edadSeleccionada = modeloService.getEdad();
+
 			vm.getMejorMarcaPorEdad = function(){
 				var listaMarcas = modeloService.getMarcas();
-				var edadSeleccionada = modeloService.getEdad();
+								
 
-				var listaMarcasEdadSeleccionada = List.filter(function(listaMarcas, edadSeleccionada){
-					return listaMarcas.age === edadSeleccionada;
+				vm.listaMarcasEdadSeleccionada = listaMarcas.filter(function(el){					
+					return el.age === vm.edadSeleccionada;
 				});				
 			}
 
-			vm.nombre_listado = "Marcas M35 hombre";
+			vm.nombre_listado = "Marcas M" + vm.edadSeleccionada + " hombre";
 
 			vm.getMejorMarcaPorEdad();
 			

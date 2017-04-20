@@ -4,18 +4,27 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+	<link rel="stylesheet" href="css/styles.css"/>
 	<link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
     <script data-main="scripts/config" src="node_modules/requirejs/require.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div class="contenedor">
+    <div id="contenedor" class="contenedor">
 		<div class="row">
-		<div class="col-md-3">
-			<ul class="nav">
-				<li><a href="#calculo"> Calculo de porcentage </a></li>
-				<li><a href="#listaMarcas"> Lista de marcas </a></li>
+		<div class="col-md-3" style=" display: block; margin: 0 auto; width: 25rem;">
+			<ul class="nav" style="text-align: center; padding: 0;">				
+				<md-button class="md-fab" aria-label="Eat cake">
+            		<a href="#calculo"><i class="material-icons" style="color:white; font-size: 37px;line-height: 1.5">directions_run</i></a>					
+        		</md-button>				
+				<md-button class="md-fab" aria-label="Eat cake">
+            		<a href="#listaMarcas"><i class="material-icons" style="color:white; font-size: 37px;line-height: 1.5">list</i></a>					
+        		</md-button>
+				
 			</ul>
 		</div>
 		<div class="col-md-9">

@@ -9,12 +9,6 @@ define([
 		function Controller(scope, $timeout, modeloService, apiService){
 			
 			vm=this;
-
-			vm.ganadores = [
-				{posicion: 1, nombre: "Daniel Amattulo"},
-				{posicion: 2, nombre: "Pedro Marmol"},
-				{posicion: 3, nombre: "Josmar"}
-			];
 			
 			vm.refresh = function(){
 				apiService.getMarcas()
@@ -66,7 +60,7 @@ define([
 			};				
 		}
 		
-		app.controller("appController", Controller);
+		app.controller("calculoController", Controller);
 		Controller.$inject=["$scope", "$timeout", "modeloService", "apiService"];
 
 		

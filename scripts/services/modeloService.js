@@ -6,7 +6,7 @@ define([
 		
 		function service(calculoMarcaService){
 			var atleta = {
-				edad: 35,
+				edad: "35",
 				sexo: "M",
 				tipoPrueba: "concurso",
 				prueba: "",
@@ -48,7 +48,7 @@ define([
 					var result = calculoMarcaService.calculoPorcentageCarrera(atleta, mejorMarcaPorEdad.mark);
 				}
 				
-				atleta.porcentage = result.toString();
+				atleta.porcentage = result.toString() + "%";
 
 			};
 
