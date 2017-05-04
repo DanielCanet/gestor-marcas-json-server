@@ -6,5 +6,5 @@ define([
 ], function(angular, appModule, directiveModule, serviceModule) {
     'use strict';
 
-    angular.bootstrap($("#contenedor2"), [appModule.name, directiveModule.name, serviceModule.name]);
+    angular.bootstrap($("#contenedor"), [appModule.name, directiveModule.name, serviceModule.name]);
 });

@@ -1,0 +1,33 @@
+<div id="calculoContainer" ng-controller="calculoController as ctrl" style="margin: 0 auto; border: 1px solid rgba(0,0,0,0.12); width: 25rem; height: 29rem">
+
+    <h1>{{ctrl.saludo}}</h1 <form name="gestorMarcaForm">
+    <div layout="row" style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem">
+        <md-input-container flex="50">
+            <sexo-atleta sexo="ctrl.sexo"></sexo-atleta>
+        </md-input-container>
+        <div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
+            <edad-atleta edad="ctrl.edad" style="width: 3rem"></edad-atleta>
+        </div>
+    </div>
+
+    <!--<div layout="row" style="width: 20rem; margin-left: 4.5rem">
+                    <md-input-container flex="50">
+                        <tipo-prueba change="ctrl.changeTipoPrueba" tipo="ctrl.model.tipoPrueba"></tipo-prueba>
+                    </md-input-container>
+                    <md-input-container flex="50">
+                        <select-prueba prueba="ctrl.model.prueba" lista="ctrl.lista"></select-prueba>
+                    </md-input-container>
+                </div>
+                <div id="elemento" layout="row" style="width: 10rem; margin-left: 7.5rem">
+                    <marca-atleta marca="ctrl.model.marca"></marca-atleta>
+                </div>
+                <div id="elemento" layout="row" style="width: 10rem; height: 3rem; display: block; margin: 0 auto; background-color:rgba(0,0,0,0.12);">
+                    <label style="width: 4rem; display: block; margin: 0 auto; padding-top: 0.7rem; font-size: 1.5rem;" for="porcentage">{{ ctrl.model.porcentage }}</label></br>
+                </div>
+                <div layout-gt-xs="row" style="margin: 2rem">
+                    <md-button style="display: block; margin: 0 auto;" class="md-raised md-primary" ng-click="ctrl.getMarca()">Calcular</md-button>
+                    </button>
+                </div>-->
+    </form>
+
+</div>
