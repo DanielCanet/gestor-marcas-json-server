@@ -2,9 +2,10 @@ define([
     'angular',
     'appModule',
     'directives/directiveModule',
-    'services/serviceModule'
-], function(angular, appModule, directiveModule, serviceModule) {
+    'services/serviceModule',
+    'filters/filtersModule'
+], function(angular, appModule, directiveModule, serviceModule, filtersModule) {
     'use strict';
 
-    angular.bootstrap($("#contenedor"), [appModule.name, directiveModule.name, serviceModule.name]);
+    angular.bootstrap($("#contenedor"), [appModule.name, directiveModule.name, serviceModule.name, filtersModule.name]);
 });

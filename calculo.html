@@ -3,11 +3,28 @@
     <h1>{{ctrl.saludo}}</h1 <form name="gestorMarcaForm">
     <div layout="row" style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem">
         <md-input-container flex="50">
-            <sexo-atleta sexo="ctrl.sexo"></sexo-atleta>
+            <sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta>
         </md-input-container>
         <div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
-            <edad-atleta edad="ctrl.edad" style="width: 3rem"></edad-atleta>
+            <edad-atleta edad="ctrl.model.edad" style="width: 3rem"></edad-atleta>
         </div>
+
+        <md-radio-group ng-model="ctrl.model.tipoPrueba">
+
+                <md-radio-button value="carrera" class="md-primary" style="display:block"> Carrera </md-radio-button>
+                <md-radio-button value="concurso"> Concurso </md-radio-button>
+
+        </md-radio-group>	
+
+        <md-input-container>
+            <label>Prueba</label>
+            <md-select ng-model="ctrl.model.prueba">
+            <md-option ng-repeat="prueba in ctrl.model.pruebas | tipoPruebaFilter : ctrl.model.tipoPrueba" ng-value="prueba.nombre">
+                {{prueba.nombre}}
+            </md-option>
+            </md-select>
+        </md-input-container>      
+
     </div>
 
     <!--<div layout="row" style="width: 20rem; margin-left: 4.5rem">

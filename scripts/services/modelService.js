@@ -10,12 +10,25 @@ define([
             var initialize = function() {
                 model = {
                     edad: "35",
-                    serxo: "M"
+                    sexo: "M",
+                    tipoPrueba: "concurso",
+                    pruebas: [
+                        {tipo:"concurso", nombre:"longitud"},
+                        {tipo:"concurso", nombre:"martillo"},
+                        {tipo:"carrera", nombre:"100ll"},
+                        {tipo:"carrera", nombre:"400ll"}
+                    ],
+                    prueba: ""
                 };
             };
 
+            var get = function(){
+                return model;
+            };
+
             return {
-                initialize: initialize
+                initialize: initialize,
+                get: get
             };
         };
 
