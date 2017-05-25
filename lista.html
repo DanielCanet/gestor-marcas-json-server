@@ -1,6 +1,10 @@
-<div id="listaMarcasContainer" ng-controller="listaMarcasController as ctrl">
-    <h1>Lista de marcas</h1>
+<div id="listaMarcasContainer" ng-controller="listaMarcasController as ctrl" style="margin: 0 auto; border: 1px solid rgba(0,0,0,0.12); width: 25rem; height: 29rem">
+
+    <h1>Lista de marcas {{ctrl.marcasByEdad[0].sex}}{{ctrl.marcasByEdad[0].age}}</h1>
+
     <div layout="row" style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem">
-        <h1>{{ctrl.helloWorld}}</h1>
+        <ul>
+            <li ng-repeat="event in ctrl.marcasByEdad[0].eventos">{{event.name}} - {{event.mark}}</li>
+        </ul>
     </div>
 </div>

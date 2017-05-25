@@ -2,37 +2,30 @@ define([
 
 ], function() {
     return function(app) {
-        function controller($scope, modelService) {
+        function controller($scope, modelService, apiService) {
             var vm = this;
-            vm.saludo = "Gestor de marcas";         
+            vm.saludo = "Gestor de marcas";
 
-            function initialize(){
+            function getMarcas() {
+                apiService.getMarcas().then(function(response) {
+                    modelService.setMarcas(response);
+                }, function() {
+                    modelService.setMarcas([]);
+                });
+            }
+
+            function initialize() {
                 modelService.initialize();
+                getMarcas();
                 vm.model = modelService.get();
             }
 
-            (function () {
+            (function() {
                 initialize();
             })();
-
         };
 
-        controller.$inject = ["$scope", "modelService"];
+        controller.$inject = ["$scope", "modelService", "apiService"];
         app.controller('calculoController', controller);
-
-        // function filtro() {
-        //     return function(pruebas, tipoPrueba) {
-        //         var result = [];
-        //         angular.forEach(pruebas, function(prueba) {
-        //             if (prueba.tipo === tipoPrueba) {
-        //             result.push(prueba)
-        //             }
-        //         })
-        //         return result;
-        //     }
-        // }
-
-        // app.filter('tipoPruebaFiltro', filtro);        
-
     };
 });

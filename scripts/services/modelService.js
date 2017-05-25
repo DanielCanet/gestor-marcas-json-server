@@ -3,7 +3,7 @@ define([
 ], function() {
     return function(app) {
 
-        function service() {
+        function service(apiService) {
 
             var model = {};
 
@@ -19,17 +19,33 @@ define([
                         { tipo: "carrera", nombre: "400ll" }
                     ],
                     prueba: "",
-                    marca: ""
+                    marca: "",
+                    marcas: []
                 };
             };
+
+            function setMarcas(listMarcas) {
+                model.marcas = listMarcas;
+            }
 
             var get = function() {
                 return model;
             };
 
+            var getEdad = function() {
+                return model.edad;
+            }
+
+            var getMarcas = function() {
+                return model.marcas;
+            }
+
             return {
                 initialize: initialize,
-                get: get
+                get: get,
+                getEdad: getEdad,
+                getMarcas: getMarcas,
+                setMarcas: setMarcas
             };
         };
 
