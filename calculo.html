@@ -1,32 +1,44 @@
 <div id="calculoContainer" ng-controller="calculoController as ctrl" style="margin: 0 auto; border: 1px solid rgba(0,0,0,0.12); width: 25rem; height: 29rem">
 
     <h1>{{ctrl.saludo}}</h1 <form name="gestorMarcaForm">
-    <div layout="row" style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem">
-        <md-input-container flex="50">
-            <sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta>
-        </md-input-container>
-        <div layout-gt-xs="row" style="margin-top: 1rem; margin-left: 1rem">
-            <edad-atleta edad="ctrl.model.edad" style="width: 3rem"></edad-atleta>
+
+    <div style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem;">
+        <div layout="row">
+            <div flex>
+                <sexo-atleta sexo="ctrl.model.sexo"></sexo-atleta>
+            </div>
+            <div flex>
+                <edad-atleta edad="ctrl.model.edad" style="width: 3rem"></edad-atleta>
+            </div>
         </div>
 
-        <md-radio-group ng-model="ctrl.model.tipoPrueba">
+        <div layout="row">
+            <div flex>
+                <md-radio-group ng-model="ctrl.model.tipoPrueba">
 
-                <md-radio-button value="carrera" class="md-primary" style="display:block"> Carrera </md-radio-button>
-                <md-radio-button value="concurso"> Concurso </md-radio-button>
+                    <md-radio-button value="carrera"> Carrera </md-radio-button>
+                    <md-radio-button value="concurso"> Concurso </md-radio-button>
 
-        </md-radio-group>	
+                </md-radio-group>
+            </div>
+            <div flex>
+                <md-input-container>
+                    <label>Prueba</label>
+                    <md-select ng-model="ctrl.model.prueba">
+                        <md-option ng-repeat="prueba in ctrl.model.pruebas | tipoPruebaFilter : ctrl.model.tipoPrueba" ng-value="prueba.nombre">
+                            {{prueba.nombre}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
 
-        <md-input-container>
-            <label>Prueba</label>
-            <md-select ng-model="ctrl.model.prueba">
-            <md-option ng-repeat="prueba in ctrl.model.pruebas | tipoPruebaFilter : ctrl.model.tipoPrueba" ng-value="prueba.nombre">
-                {{prueba.nombre}}
-            </md-option>
-            </md-select>
-        </md-input-container>      
-
+        <div layout="row">
+            <div flex>
+                <marca-atleta marca="ctrl.model.marca"></marca-atleta>
+            </div>
+        </div>
     </div>
-
     <!--<div layout="row" style="width: 20rem; margin-left: 4.5rem">
                     <md-input-container flex="50">
                         <tipo-prueba change="ctrl.changeTipoPrueba" tipo="ctrl.model.tipoPrueba"></tipo-prueba>
