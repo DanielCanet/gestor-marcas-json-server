@@ -21,6 +21,7 @@ define([
                     prueba: "",
                     marca: "",
                     mejorMarca: "",
+                    porcentajeMarca: "",
                     marcas: []
                 };
             };
@@ -56,6 +57,9 @@ define([
             var setMejorMarca = function(mejorMarca) {
                 model.mejorMarca = mejorMarca;
             }
+            var setPorcentajeMarca = function(porcentajeMarca) {
+                model.porcentajeMarca = porcentajeMarca;
+            }
 
             return {
                 initialize: initialize,
@@ -66,7 +70,8 @@ define([
                 getEdad: getEdad,
                 getTipoPrueba: getTipoPrueba,
                 getPrueba: getPrueba,
-                setMejorMarca: setMejorMarca
+                setMejorMarca: setMejorMarca,
+                setPorcentajeMarca: setPorcentajeMarca
             };
         };
 

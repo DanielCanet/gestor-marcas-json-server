@@ -40,11 +40,20 @@
                 <div flex>
                     <md-input-container class="md-block">
                         <label>Mejor Marca</label>
-                        <input name="mejorMarca" ng-model="ctrl.model.mejorMarca" placeholder="Mejor marca">
+                        <input name="mejorMarca" ng-model="ctrl.model.mejorMarca" placeholder="Mejor marca" disabled>
                     </md-input-container>
                 </div>
             </div>
 
+            <div layout="row">
+                <div flex></div>
+                <div flex>
+                    <md-input-container class="md-block">
+                        <label>Porcentaje marca</label>
+                        <input name="porcentajeMarca" ng-model="ctrl.model.porcentajeMarca" placeholder="Porcentaje marca" disabled>
+                    </md-input-container>
+                </div>
+            </div>
             <div layout="row">
                 <div flex>
                     <md-button class="md-raised md-primary" ng-click="ctrl.getMejorMarca();">

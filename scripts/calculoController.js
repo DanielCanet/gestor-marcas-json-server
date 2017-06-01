@@ -7,7 +7,12 @@ define([
             vm.saludo = "Gestor de marcas";
 
             vm.getMejorMarca = function() {
-                modelService.setMejorMarca(calculoMarcaService.getMejorMarca());
+                var marca = vm.model.marca;
+                var mejorMarca = calculoMarcaService.getMejorMarca();
+                modelService.setMejorMarca(mejorMarca);
+
+                var porcentajeMarca = calculoMarcaService.getPorcentajeMarca(marca, mejorMarca);
+                modelService.setPorcentajeMarca(porcentajeMarca);
             }
 
             function getMarcas() {

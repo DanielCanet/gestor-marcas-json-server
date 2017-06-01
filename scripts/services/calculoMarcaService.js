@@ -5,7 +5,7 @@ define([
 
         function service($http, modelService) {
 
-            var getMejorMarca = function getMejorMarca(marcas) {
+            var getMejorMarca = function(marcas) {
 
                 var sexo = modelService.getSexo();
                 var edad = modelService.getEdad();
@@ -22,8 +22,17 @@ define([
                 return events[0].mark;
             }
 
+            var getPorcentajeMarca = function(marca, mejorMarca) {
+                var porcentajeMarca = 0;
+                if (parseInt(mejorMarca) !== 0) {
+                    porcentajeMarca = (parseInt(marca) / parseInt(mejorMarca) * 100)
+                }
+                return porcentajeMarca;
+            }
+
             return {
-                getMejorMarca: getMejorMarca
+                getMejorMarca: getMejorMarca,
+                getPorcentajeMarca: getPorcentajeMarca
             };
         };
 
