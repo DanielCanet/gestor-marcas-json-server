@@ -2,9 +2,13 @@ define([
 
 ], function() {
     return function(app) {
-        function controller($scope, modelService, apiService) {
+        function controller($scope, modelService, calculoMarcaService, apiService) {
             var vm = this;
             vm.saludo = "Gestor de marcas";
+
+            vm.getMejorMarca = function() {
+                modelService.setMejorMarca(calculoMarcaService.getMejorMarca());
+            }
 
             function getMarcas() {
                 apiService.getMarcas().then(function(response) {
@@ -25,7 +29,7 @@ define([
             })();
         };
 
-        controller.$inject = ["$scope", "modelService", "apiService"];
+        controller.$inject = ["$scope", "modelService", "calculoMarcaService", "apiService"];
         app.controller('calculoController', controller);
     };
 });

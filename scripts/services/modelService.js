@@ -13,13 +13,14 @@ define([
                     sexo: "M",
                     tipoPrueba: "concurso",
                     pruebas: [
-                        { tipo: "concurso", nombre: "longitud" },
-                        { tipo: "concurso", nombre: "martillo" },
-                        { tipo: "carrera", nombre: "100ll" },
-                        { tipo: "carrera", nombre: "400ll" }
+                        { tipo: "concurso", nombre: "longitud", value: "longJump" },
+                        { tipo: "concurso", nombre: "martillo", value: "hammer" },
+                        { tipo: "carrera", nombre: "100ll", value: "m100ll" },
+                        { tipo: "carrera", nombre: "400ll", value: "m400ll" }
                     ],
                     prueba: "",
                     marca: "",
+                    mejorMarca: "",
                     marcas: []
                 };
             };
@@ -28,24 +29,44 @@ define([
                 model.marcas = listMarcas;
             }
 
+            var getMarcas = function() {
+                return model.marcas;
+            }
+
             var get = function() {
                 return model;
             };
+
+            var getSexo = function() {
+                return model.sexo;
+            }
 
             var getEdad = function() {
                 return model.edad;
             }
 
-            var getMarcas = function() {
-                return model.marcas;
+            var getTipoPrueba = function() {
+                return model.tipoPrueba;
+            }
+
+            var getPrueba = function() {
+                return model.prueba;
+            }
+
+            var setMejorMarca = function(mejorMarca) {
+                model.mejorMarca = mejorMarca;
             }
 
             return {
                 initialize: initialize,
-                get: get,
-                getEdad: getEdad,
+                setMarcas: setMarcas,
                 getMarcas: getMarcas,
-                setMarcas: setMarcas
+                get: get,
+                getSexo: getSexo,
+                getEdad: getEdad,
+                getTipoPrueba: getTipoPrueba,
+                getPrueba: getPrueba,
+                setMejorMarca: setMejorMarca
             };
         };
 
