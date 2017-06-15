@@ -10,9 +10,6 @@ define([
                 var marca = vm.model.marca;
                 var mejorMarca = calculoMarcaService.getMejorMarca();
                 modelService.setMejorMarca(mejorMarca);
-
-                var porcentajeMarca = calculoMarcaService.getPorcentajeMarca(marca, mejorMarca);
-                modelService.setPorcentajeMarca(porcentajeMarca);
             }
 
             function getMarcas() {
@@ -22,6 +19,33 @@ define([
                     modelService.setMarcas([]);
                 });
             }
+
+            vm.getPorcentajeMarca = function() {
+                var marca = vm.model.marca;
+                var mejorMarca = calculoMarcaService.getMejorMarca();
+                var porcentajeMarca = calculoMarcaService.getPorcentajeMarca(marca, mejorMarca);
+                if (porcentajeMarca !== "NaN") {
+                    modelService.setPorcentajeMarca(porcentajeMarca);
+                }
+            }
+
+            $scope.$watch("ctrl.model.tipoPrueba", function(newValue, oldValue) {
+                if (newValue === oldValue) {
+                    return;
+                }
+
+                modelService.setPrueba("");
+            });
+
+            $scope.$watch("ctrl.model.prueba", function(newValue, oldValue) {
+                if (newValue === oldValue) {
+                    return;
+                }
+                if (newValue === "") {
+                    modelService.setMejorMarca("");
+                }
+                vm.getMejorMarca();
+            });
 
             function initialize() {
                 modelService.initialize();

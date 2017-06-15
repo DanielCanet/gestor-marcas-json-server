@@ -46,20 +46,16 @@
             </div>
 
             <div layout="row">
-                <div flex>
+                <div flex="60">
+                    <md-button class="md-raised md-primary" ng-click="ctrl.getPorcentajeMarca();">
+                        Obtener porcentaje
+                    </md-button>
                 </div>
-                <div flex>
+                <div flex="40">
                     <md-input-container class="md-block">
                         <label>Porcentaje marca</label>
                         <input name="porcentajeMarca" ng-model="ctrl.model.porcentajeMarca" placeholder="Porcentaje marca" disabled>
                     </md-input-container>
-                </div>
-            </div>
-            <div layout="row" style="text-align: center;">
-                <div flex>
-                    <md-button class="md-raised md-primary" ng-click="ctrl.getMejorMarca();">
-                        Obtener mejor marca
-                    </md-button>
                 </div>
             </div>
         </div>

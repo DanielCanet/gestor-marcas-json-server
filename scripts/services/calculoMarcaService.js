@@ -25,7 +25,7 @@ define([
             var getPorcentajeMarca = function(marca, mejorMarca) {
                 var porcentajeMarca = 0;
                 if (parseInt(mejorMarca) !== 0) {
-                    porcentajeMarca = (parseInt(marca) / parseInt(mejorMarca) * 100)
+                    porcentajeMarca = (((parseInt(marca) / parseInt(mejorMarca)) * 100));
                 }
                 return porcentajeMarca;
             }

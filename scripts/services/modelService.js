@@ -50,6 +50,10 @@ define([
                 return model.tipoPrueba;
             }
 
+            var setPrueba = function(prueba) {
+                model.prueba = prueba;
+            }
+
             var getPrueba = function() {
                 return model.prueba;
             }
@@ -69,6 +73,7 @@ define([
                 getSexo: getSexo,
                 getEdad: getEdad,
                 getTipoPrueba: getTipoPrueba,
+                setPrueba: setPrueba,
                 getPrueba: getPrueba,
                 setMejorMarca: setMejorMarca,
                 setPorcentajeMarca: setPorcentajeMarca
