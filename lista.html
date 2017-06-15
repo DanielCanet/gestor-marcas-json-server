@@ -1,10 +1,16 @@
 <div id="listaMarcasContainer" ng-controller="listaMarcasController as ctrl" style="margin: 0 auto; border: 1px solid rgba(0,0,0,0.12); width: 25rem; height: auto; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);">
 
-    <h1>Lista de marcas {{ctrl.marcasByEdad[0].sex}}{{ctrl.marcasByEdad[0].age}}</h1>
-
-    <div layout="row" style="width: 20rem; margin-top: 1rem; margin-left: 4.5rem">
-        <ul>
-            <li ng-repeat="event in ctrl.marcasByEdad[0].eventos">{{event.name}} - {{event.mark}}</li>
-        </ul>
+    <h2>Lista de marcas {{ctrl.marcasByEdad[0].sex}}{{ctrl.marcasByEdad[0].age}}</h2>
+    <div flex>
+        <div style="width: 20rem; margin-left: 4.5rem">
+            <div layout="row" ng-repeat="event in ctrl.marcasByEdad[0].eventos">
+                <div flex="60">
+                    {{event.name}}
+                </div>
+                <div flex="40">
+                    <strong>{{event.mark}}</strong>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
