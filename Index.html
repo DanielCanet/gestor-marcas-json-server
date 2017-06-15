@@ -17,14 +17,14 @@
 
         <div>
             <div style="margin: 0 auto; width: 25rem;">
-                <md-button class="md-fab" aria-label="Eat cake" href="#/calculo">
-                    <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
-                </md-button>
-                <md-button class="md-fab" aria-label="Eat cake" href="#/lista">
-                    <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
-                </md-button>
-                <!--<a href="#/calculo">Calculo</a>
-                <a href="#/lista">Lista</a>-->
+                <ul class="nav" style="text-align: center; padding: 0;">
+                    <md-button class="md-fab" aria-label="Eat cake">
+                        <a href="#/calculo"><i class="material-icons" style="color:white; font-size: 37px;line-height: 1.5">directions_run</i></a>
+                    </md-button>
+                    <md-button class="md-fab" aria-label="Eat cake">
+                        <a href="#/lista"><i class="material-icons" style="color:white; font-size: 37px;line-height: 1.5">list</i></a>
+                    </md-button>
+                </ul>
             </div>
             <div id="content" ng-view></div>
 
