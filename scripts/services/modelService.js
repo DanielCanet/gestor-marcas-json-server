@@ -14,7 +14,9 @@ define([
                     tipoPrueba: "concurso",
                     pruebas: [
                         { tipo: "concurso", nombre: "longitud", value: "longJump" },
+                        { tipo: "concurso", nombre: "altura", value: "hightJump" },
                         { tipo: "concurso", nombre: "martillo", value: "hammer" },
+                        { tipo: "concurso", nombre: "javalina", value: "javelin" },
                         { tipo: "carrera", nombre: "100ll", value: "m100ll" },
                         { tipo: "carrera", nombre: "400ll", value: "m400ll" }
                     ],
