@@ -7,7 +7,6 @@ define([
             vm.saludo = "Gestor de marcas";
 
             vm.getMejorMarca = function() {
-                var marca = vm.model.marca;
                 var mejorMarca = calculoMarcaService.getMejorMarca();
                 modelService.setMejorMarca(mejorMarca);
             }
@@ -34,7 +33,19 @@ define([
                     return;
                 }
 
+                if (newValue === "") {
+                    modelService.setMejorMarca("");
+                }
+                vm.getMejorMarca();
+            });
+
+            $scope.$watch("ctrl.model.edad", function(newValue, oldValue) {
+                if (newValue === oldValue) {
+                    return;
+                }
+
                 modelService.setPrueba("");
+                modelService.setPorcentajeMarca("");
             });
 
             $scope.$watch("ctrl.model.prueba", function(newValue, oldValue) {
